@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadership Clarity Assessment | The Clarity Practice Asia</title>
+    <meta name="description" content="How much is decision paralysis costing your business? Take our free 60-second assessment to identify your leadership blind spots and get your Executive Clarity Score.">
+    <meta name="keywords" content="leadership assessment, decision paralysis, executive coaching quiz, leadership blind spots, business coaching, Singapore">
+    <meta name="author" content="Gary McRae">
+    
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.theclaritypractice.asia/clarity-assessment">
+    <meta property="og:title" content="Leadership Clarity Assessment | The Clarity Practice Asia">
+    <meta property="og:description" content="Assess your leadership blind spots in 60 seconds and discover what's holding back your team's performance and your company's growth.">
+    <meta property="og:image" content="https://res.cloudinary.com/dtrox8oam/image/upload/v1748834250/TCP-Horizontal-MainColor_cdbpl4.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dtrox8oam/image/upload/v1749629460/Favicon_2x_vjuv2f.png">
+    <link rel="apple-touch-icon" href="https://res.cloudinary.com/dtrox8oam/image/upload/v1749629460/Favicon_2x_vjuv2f.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Recoleta:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Chart.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Quiz",
+        "name": "Leadership Clarity Assessment",
+        "description": "A leadership assessment tool that measures executive clarity to identify leadership blind spots and quantify the potential cost of decision paralysis.",
+        "url": "https://www.theclaritypractice.asia/clarity-assessment",
+        "inLanguage": "en",
+        "timeRequired": "PT1M",
+        "educationalUse": [ "Self Assessment", "Professional Development" ],
+        "audience": {
+            "@type": "Audience",
+            "audienceType": "Executives, Senior Leaders, Business Owners"
+        },
+        "provider": {
+            "@type": "Organization",
+            "name": "The Clarity Practice Asia"
+        }
+    }
+    </script>
+    
+    <style>
+        :root {
+            --primary: #3E6259; /* Deep Teal */
+            --primary-light: #5C6B73; /* Slate Blue */
+            --accent: #DCE3DB; /* Pale Sage */
+            --accent-gold: #A89F68; /* Olive Gold */
+            --text: #1C1C1C;
+            --text-light: #555;
+            --bg: #F8F8F5; /* Pebble White */
+            --border: #e0e0e0;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+            color: var(--text);
+            background-color: var(--bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .quiz-wrapper {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .quiz-container {
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+            overflow: hidden;
+        }
+        .quiz-header h1, .quiz-header h2 { font-family: 'Recoleta', serif; }
+        .quiz-header { text-align: center; padding: 3rem 2rem 2rem; }
+        .quiz-header h1 { font-size: 2.75rem; color: var(--primary); margin-bottom: 0.75rem; font-weight: 700; line-height: 1.2; }
+        .quiz-header p { font-size: 1.25rem; color: var(--text-light); max-width: 600px; margin: 0 auto; }
+        .progress-container { background: var(--accent); height: 8px; }
+        .progress-bar { height: 100%; background: var(--primary); transition: width 0.4s ease-in-out; border-radius: 0 4px 4px 0; }
+        .question-area { padding: 2rem; }
+        .progress-text { text-align: center; margin-bottom: 1rem; color: var(--text-light); font-size: 0.9rem; letter-spacing: 0.5px; text-transform: uppercase; }
+        .question-container { margin-bottom: 2rem; }
+        .question-text { font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--text); font-family: 'Recoleta', serif; text-align: center; font-weight: 600; }
+        .options-container { display: flex; flex-direction: column; gap: 1rem; }
+        .option {
+            background: var(--bg); border: 2px solid var(--border); padding: 1.2rem; border-radius: 8px; cursor: pointer;
+            transition: all 0.2s ease; font-size: 1.1rem; text-align: center;
+        }
+        .option:hover, .option:focus {
+            border-color: var(--accent-gold); transform: translateY(-3px); box-shadow: 0 6px 15px rgba(168, 159, 104, 0.2); outline: none;
+        }
+        .option.selected { background: var(--accent); border-color: var(--primary); font-weight: 600; color: var(--primary); }
+        .btn { padding: 1rem 2.5rem; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; font-family: 'IBM Plex Sans', sans-serif; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: var(--primary-light); transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .btn-secondary { background: white; color: var(--primary); border: 2px solid var(--border); box-shadow: none; }
+        .btn-secondary:hover { background: var(--bg); border-color: var(--primary-light); }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
+        .start-screen { text-align: center; padding: 3rem 1.5rem; }
+        .start-screen p { margin-bottom: 2.5rem; }
+        .results-screen { display: none; padding: 3rem 2rem; }
+        .results-screen.show { display: block; }
+        .results-header { text-align: center; margin-bottom: 3rem; }
+        .score-display { font-size: 5rem; color: var(--primary); font-weight: 700; margin-bottom: 0.5rem; font-family: 'Recoleta', serif; line-height: 1; }
+        .score-category { font-size: 2rem; color: var(--accent-gold); margin-bottom: 1rem; font-family: 'Recoleta', serif; }
+        .score-description { font-size: 1.2rem; color: var(--text-light); max-width: 600px; margin: 0 auto; }
+        .chart-wrapper { background: var(--bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border); }
+        .chart-title { font-size: 1.5rem; color: var(--primary); margin-bottom: 1.5rem; text-align: center; font-family: 'Recoleta', serif; font-weight: 600; }
+        .contact-form { background: var(--accent); padding: 2.5rem; border-radius: 12px; margin-top: 3rem; }
+        .contact-form h3 { font-size: 2rem; color: var(--primary); margin-bottom: 1rem; text-align: center; font-family: 'Recoleta', serif; }
+        .hidden { display: none !important; }
+        .logo-header { text-align: center; padding: 2rem 0; }
+        .logo-header a { display: inline-block; }
+        .logo-header img { max-width: 250px; width: 100%; height: auto; }
+        .footer { padding: 2rem; text-align: center; margin-top: 2rem; color: var(--text-light); font-size: 0.9rem; }
+        .footer a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        .footer a:hover { text-decoration: underline; }
+        @media (max-width: 768px) {
+            .quiz-wrapper { padding: 0 0.5rem; margin: 1rem auto; }
+            .quiz-header h1 { font-size: 2.25rem; }
+            .quiz-header p { font-size: 1.1rem; }
+            .question-area { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="logo-header">
+        <a href="https://www.theclaritypractice.asia" title="The Clarity Practice Asia">
+            <img src="https://res.cloudinary.com/dtrox8oam/image/upload/v1748834250/TCP-Horizontal-MainColor_cdbpl4.jpg" alt="The Clarity Practice Asia Logo" />
+        </a>
+    </header>
+    <div class="quiz-wrapper">
+        <div class="quiz-container">
+            <!-- Start Screen -->
+            <div id="startScreen" class="start-screen">
+                <div class="quiz-header">
+                    <h1>How much is decision paralysis costing your business?</h1>
+                    <p>Assess your leadership blind spots in 60 seconds.</p>
+                </div>
+                <p style="font-size: 1.1rem; color: var(--text-light); margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Are you a decisive leader? Or is your team bogged down by indecision? This quick assessment will help you identify your clarity blockers and provide you with tailored recommendations to improve your decision-making, enhance your team's performance, and drive business growth.
+                </p>
+                <button class="btn btn-primary" onclick="startQuiz()">Start Your Clarity Assessment</button>
+            </div>
+
+            <!-- Quiz Screen -->
+            <div id="quizScreen" class="hidden">
+                <div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
+                <div class="question-area">
+                    <div class="progress-text" id="progressText"></div>
+                    <div class="question-container">
+                        <div class="question-text" id="questionText"></div>
+                        <div id="optionsContainer" class="options-container"></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-top: 2rem;">
+                        <button class="btn btn-secondary" id="prevBtn" onclick="previousQuestion()">Previous</button>
+                        <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()" disabled>Next</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Screen -->
+            <div id="resultsScreen" class="results-screen">
+                <div class="results-header">
+                    <h1>Your Executive Clarity Score</h1>
+                    <div class="score-display" id="scoreDisplay"></div>
+                    <div class="score-category" id="scoreCategory"></div>
+                    <p class="score-description" id="scoreDescription"></p>
+                </div>
+                
+                <div class="chart-wrapper" style="margin-bottom: 2rem;">
+                    <h3 class="chart-title">Your Clarity Dimensions Profile</h3>
+                    <canvas id="spiderChart"></canvas>
+                </div>
+
+                <!-- HubSpot Form Placeholder Section -->
+                <div class="contact-form" id="hubspotFormContainer">
+                    <!-- This is where the HubSpot form embed code will go. -->
+                    <!-- The JavaScript below will conditionally show one of two HubSpot forms based on the user's score. -->
+                    
+                    <!-- HubSpot Form for users who need coaching (score <= 50) -->
+                    <div id="hubspotCoachingForm" class="hidden">
+                         <h3>Unlock Your Full Potential</h3>
+                         <p style="text-align: center; margin-bottom: 2rem;">Based on your score, a focused strategy session could provide immediate breakthroughs. To get your complimentary guide and book a session, please provide your details below.</p>
+                         <!-- DEVELOPER NOTE: Paste HubSpot 'Coaching Lead' Form Embed Code Below -->
+                         <div class="hubspot-form-placeholder" style="min-height: 380px; border: 2px dashed var(--border); display: flex; align-items: center; justify-content: center; text-align: center; color: var(--text-light); border-radius: 8px; padding: 1rem;">
+                            HubSpot "Coaching Lead" Form Goes Here
+                         </div>
+                    </div>
+
+                    <!-- HubSpot Form for users who are a good fit for the newsletter (score > 50) -->
+                     <div id="hubspotNewsletterForm" class="hidden">
+                         <h3>You're Operating with Strong Clarity. Stay Sharp.</h3>
+                         <p style="text-align: center; margin-bottom: 2rem;">You're in the top tier of leaders. To receive your complimentary guide and get advanced clarity insights delivered to your inbox, please provide your email below.</p>
+                         <!-- DEVELOPER NOTE: Paste HubSpot 'Newsletter Signup' Form Embed Code Below -->
+                         <div class="hubspot-form-placeholder" style="min-height: 200px; border: 2px dashed var(--border); display: flex; align-items: center; justify-content: center; text-align: center; color: var(--text-light); border-radius: 8px; padding: 1rem;">
+                            HubSpot "Newsletter" Form Goes Here
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2025 The Clarity Practice Asia. All rights reserved. | <a href="https://www.theclaritypractice.asia/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></p>
+    </footer>
+    <script>
+        // Quiz Data (same as before)
+        const questions = [
+            { id: 1, text: "How often do you postpone important decisions?", type: "multiple", dimension: "decision", options: [{ text: "Daily", value: 1 }, { text: "Weekly", value: 3 }, { text: "Monthly", value: 5 }, { text: "Rarely", value: 7 }] },
+            { id: 2, text: "When facing multiple options, you typically:", type: "multiple", dimension: "decision", options: [{ text: "Feel overwhelmed and avoid choosing", value: 1 }, { text: "Analyze endlessly without deciding", value: 3 }, { text: "Decide but second-guess yourself", value: 5 }, { text: "Choose confidently and move forward", value: 7 }] },
+            { id: 3, text: "Your biggest decision-making challenge is:", type: "multiple", dimension: "decision", options: [{ text: "Too many options", value: 2 }, { text: "Fear of wrong choice", value: 2 }, { text: "Unclear priorities", value: 2 }, { text: "Limited information", value: 4 }] },
+            { id: 4, text: "Rate your mental clarity at the end of a typical workday (1=Foggy, 10=Clear)", type: "slider", dimension: "mental", min: 1, max: 10 },
+            { id: 5, text: "How many high-priority items compete for your attention daily?", type: "multiple", dimension: "mental", options: [{ text: "10+ items", value: 1 }, { text: "6-9 items", value: 3 }, { text: "3-5 items", value: 5 }, { text: "1-2 items", value: 7 }] },
+            { id: 6, text: "You feel most mentally clear:", type: "multiple", dimension: "mental", options: [{ text: "Early morning only", value: 3 }, { text: "Never really clear", value: 1 }, { text: "After exercise/breaks", value: 5 }, { text: "Throughout most of day", value: 7 }] },
+            { id: 7, text: "Your vision for the next 12 months is:", type: "multiple", dimension: "strategic", options: [{ text: "Completely unclear", value: 1 }, { text: "Vague ideas only", value: 3 }, { text: "Clear but not documented", value: 5 }, { text: "Crystal clear and written", value: 7 }] },
+            { id: 8, text: "How aligned are your daily actions with long-term goals?", type: "multiple", dimension: "strategic", options: [{ text: "Not at all aligned", value: 1 }, { text: "Occasionally aligned", value: 3 }, { text: "Mostly aligned", value: 5 }, { text: "Fully integrated", value: 7 }] },
+            { id: 9, text: "Your energy for strategic thinking is highest:", type: "multiple", dimension: "energy", options: [{ text: "Almost never", value: 1 }, { text: "One day per week", value: 3 }, { text: "Several days weekly", value: 5 }, { text: "Most days", value: 7 }] },
+            { id: 10, text: "After setbacks, you typically:", type: "multiple", dimension: "resilience", options: [{ text: "Feel stuck for weeks", value: 1 }, { text: "Need several days to recover", value: 3 }, { text: "Bounce back within a day", value: 5 }, { text: "Use it as immediate fuel", value: 7 }] }
+        ];
+
+        let currentQuestion = 0;
+        let answers = {};
+        let dimensions = {};
+        let spiderChartInstance;
+        const dimensionLabels = { decision: "Decision Speed", mental: "Mental Space", strategic: "Strategic Alignment", energy: "Energy Management", resilience: "Resilience Factor" };
+        
+        function startQuiz() {
+            currentQuestion = 0;
+            answers = {};
+            dimensions = { decision: { score: 0, count: 0 }, mental: { score: 0, count: 0 }, strategic: { score: 0, count: 0 }, energy: { score: 0, count: 0 }, resilience: { score: 0, count: 0 } };
+            document.getElementById('startScreen').classList.add('hidden');
+            document.getElementById('quizScreen').classList.remove('hidden');
+            document.getElementById('resultsScreen').classList.remove('show');
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const question = questions[currentQuestion];
+            docume
